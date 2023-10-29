@@ -1,27 +1,27 @@
-import React from "react";
-import { View, Text } from 'react-native'
+import { StyleSheet, Text, View , Image} from 'react-native'
+import React from 'react'
 
-const menu = () => {
-     return (
-        <View style = {{flex : 1}}>
-        <View style = {{padding: 20, backgroundColor: '#84ffff' }}>
-        <Text style = {{textAlign: 'center', color: '#263238', fontWeight: 'bold', fontSize: 50}}> PUTRI_RESTO </Text>
-
-        </View>
-      
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('menu')} style = {{borderWidth: 1, borderRadius: 3, marginVertical: 5, marginHorizontal: 20, padding: 10, borderRadius: 30}}>
-            <Text style = {{textAlign: 'center', fontWeight: 'bold', fontSize: 30}}> menu </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style = {{borderWidth: 1, borderRadius: 3, marginVertical: 5, marginHorizontal: 20, padding: 10, borderRadius: 30}}>
-            <Text style = {{textAlign: 'center', fontWeight: 'bold', fontSize: 30}}> lokasi </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style = {{borderWidth: 1, borderRadius: 3, marginVertical: 5, marginHorizontal: 20, padding: 10, borderRadius: 30}}>
-            <Text style = {{textAlign: 'center', fontWeight: 'bold', fontSize: 30}}> promo </Text>
-        </TouchableOpacity>
-        
-
-        </View> 
-     );
+const Menu = () => {
+    return (
+       <View style= {styles.container}>
+         <Image style={styles.image} source={{ uri: "https://restodikudus.com/wp-content/uploads/2022/04/Nila.jpg"}}/>
+       </View>
+    );
 };
 
-export default menu;
+
+
+export default Menu
+
+const styles = StyleSheet.create({
+  container: {
+     flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  image: {
+    width: 380,
+    height: 700,
+  },
+});
+

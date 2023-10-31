@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Image, ImageBackground} from 'react-nativ
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Menu from './src/screens/Menu';
-import Lokasi from './src/screens/Lokasi';
+import Login from './src/screens/Login';
 import Promo from './src/screens/Promo';
 import Makanan from './src/screens/detailmenu/Makanan';
 import Minuman from './src/screens/detailmenu/Minuman';
@@ -17,7 +17,7 @@ const App = () => {
             <Stack.Navigator initialRouteName="Home">
                 <Stack.Screen name="Home" component={Pertama} options={{ headerShown:false }} />
                 <Stack.Screen name="Menu" component={Menu} options={{ headerShown:false }} />
-                <Stack.Screen name="Lokasi" component={Lokasi} options={{ headerShown:false }} />
+                <Stack.Screen name="Lokasi" component={Login} options={{ headerShown:false }} />
                 <Stack.Screen name="Promo" component={Promo} options={{ headerShown:false }} />
                 <Stack.Screen name="Makanan" component={Makanan} options={{ headerShown:false }} />
                 <Stack.Screen name="Minuman" component={Minuman} options={{ headerShown:false }} />
@@ -43,7 +43,7 @@ const Pertama = ({ navigation }) => {
             </TouchableOpacity>
 
             <TouchableOpacity style={{ borderWidth: 1, borderRadius: 3, marginVertical: 5, marginHorizontal: 20, padding: 10, borderRadius: 30 }} onPress={() => navigation.navigate('Lokasi')}>
-                <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 30 }}> lokasi </Text>
+                <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 30 }}> login </Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={{ borderWidth: 1, borderRadius: 3, marginVertical: 5, marginHorizontal: 20, padding: 10, borderRadius: 30 }} onPress={() => navigation.navigate('Promo')}>

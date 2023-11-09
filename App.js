@@ -2,20 +2,36 @@ import React from 'react';
 import { View, Text, TouchableOpacity, Image, ImageBackground} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'; 
 import Menu from './src/screens/Menu';
 import Login from './src/screens/Login';
 import Promo from './src/screens/Promo';
 import Makanan from './src/screens/detailmenu/Makanan';
 import Minuman from './src/screens/detailmenu/Minuman';
 import Camilan from './src/screens/detailmenu/Camilan';
+import SettingsScreen from './src/screens/SettingsScreen';
+
+
+
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
+function Bottom() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={Pertama} options={{ headerShown: false, }}/>
+      <Tab.Screen name="Settings" component={SettingsScreen} />
+    </Tab.Navigator>
+  );
+}
+
 
 const App = () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Home">
-                <Stack.Screen name="Home" component={Pertama} options={{ headerShown:false }} />
+            <Stack.Navigator initialRouteName="awal">
+                <Stack.Screen name="awal" component={Bottom} options={{ headerShown:false }} />
                 <Stack.Screen name="Menu" component={Menu} options={{ headerShown:false }} />
                 <Stack.Screen name="Lokasi" component={Login} options={{ headerShown:false }} />
                 <Stack.Screen name="Promo" component={Promo} options={{ headerShown:false }} />
@@ -24,6 +40,7 @@ const App = () => {
                 <Stack.Screen name="Camilan" component={Camilan} options={{ headerShown:false }} />
             </Stack.Navigator>
         </NavigationContainer>
+        
     )
 };
 
@@ -49,7 +66,9 @@ const Pertama = ({ navigation }) => {
             <TouchableOpacity style={{ borderWidth: 1, borderRadius: 3, marginVertical: 5, marginHorizontal: 20, padding: 10, borderRadius: 30 }} onPress={() => navigation.navigate('Promo')}>
                 <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 30 }}> promo </Text>
             </TouchableOpacity>
+            
         </View>
+        
     );
 };
 

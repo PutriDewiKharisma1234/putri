@@ -5,11 +5,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'; 
 import Menu from './src/screens/Menu';
 import Login from './src/screens/Login';
-import Promo from './src/screens/Promo';
 import Makanan from './src/screens/detailmenu/Makanan';
 import Minuman from './src/screens/detailmenu/Minuman';
 import Camilan from './src/screens/detailmenu/Camilan';
-import SettingsScreen from './src/screens/SettingsScreen';
+import ProfileScreen from './src/screens/ProfileScreen';
+import Icon from 'react-native-vector-icons/FontAwesome'; // Ganti 'FontAwesome' dengan nama ikon yang ingin Anda gunakan
 
 
 
@@ -20,8 +20,26 @@ const Tab = createBottomTabNavigator();
 function Bottom() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={Pertama} options={{ headerShown: false, }}/>
-      <Tab.Screen name="Settings" component={SettingsScreen} />
+      <Tab.Screen
+        name="Home"
+        component={Pertama}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="home" size={size} color={color} />
+          ),
+          headerShown: false,
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Icon name="user" size={size} color={color} />
+          ),
+          headerShown: false,
+        }}
+      />
     </Tab.Navigator>
   );
 }
@@ -34,7 +52,6 @@ const App = () => {
                 <Stack.Screen name="awal" component={Bottom} options={{ headerShown:false }} />
                 <Stack.Screen name="Menu" component={Menu} options={{ headerShown:false }} />
                 <Stack.Screen name="Lokasi" component={Login} options={{ headerShown:false }} />
-                <Stack.Screen name="Promo" component={Promo} options={{ headerShown:false }} />
                 <Stack.Screen name="Makanan" component={Makanan} options={{ headerShown:false }} />
                 <Stack.Screen name="Minuman" component={Minuman} options={{ headerShown:false }} />
                 <Stack.Screen name="Camilan" component={Camilan} options={{ headerShown:false }} />
@@ -55,16 +72,12 @@ const Pertama = ({ navigation }) => {
                 
             </View>
 
-            <TouchableOpacity style={{ borderWidth: 1, borderRadius: 3, marginVertical: 5, marginHorizontal: 20, padding: 10, borderRadius: 30 }} onPress={() => navigation.navigate('Menu')}>
+            <TouchableOpacity style={{ borderWidth: 1, marginVertical: 5, marginHorizontal: 20, padding: 10, borderRadius: 30 }} onPress={() => navigation.navigate('Menu')}>
                 <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 30 }}> menu </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={{ borderWidth: 1, borderRadius: 3, marginVertical: 5, marginHorizontal: 20, padding: 10, borderRadius: 30 }} onPress={() => navigation.navigate('Lokasi')}>
+            <TouchableOpacity style={{ borderWidth: 1, marginVertical: 5, marginHorizontal: 20, padding: 10, borderRadius: 30 }} onPress={() => navigation.navigate('Lokasi')}>
                 <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 30 }}> login </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={{ borderWidth: 1, borderRadius: 3, marginVertical: 5, marginHorizontal: 20, padding: 10, borderRadius: 30 }} onPress={() => navigation.navigate('Promo')}>
-                <Text style={{ textAlign: 'center', fontWeight: 'bold', fontSize: 30 }}> promo </Text>
             </TouchableOpacity>
             
         </View>

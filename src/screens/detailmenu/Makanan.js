@@ -2,11 +2,11 @@ import React from 'react';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 
 const makananData = [
-  { id: '1', name: 'Nasi Goreng' },
-  { id: '2', name: 'Mie Ayam' },
-  { id: '3', name: 'Ayam Goreng' },
-  { id: '4', name: 'Bakso' },
-  { id: '5', name: 'Sate' },
+  { id: '1', name: 'Bakso' },
+  { id: '2', name: 'Sate' },
+  { id: '3', name: 'Mie Ayam' },
+  { id: '4', name: 'Ayam Goreng' },
+  { id: '5', name: 'Seafood' },
  
 ];
 
@@ -36,14 +36,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    backgroundColor: '#84ffff',
+    backgroundColor: '#f06292',
     fontSize: 50,
     padding: 30,
     fontWeight: 'bold',
     marginBottom: 10,
   },
   item: {
-    backgroundColor: '#b3e5fc',
+    backgroundColor: '#f8bbd0',
     padding: 30,
     marginVertical: 5,
     marginHorizontal: 20,
